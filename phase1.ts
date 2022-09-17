@@ -12,13 +12,6 @@ const getData = async (url: string, candidateId: string) => {
       for (let column = 0; column < matrix[row].length; column++) {
         // if the value match , make a POST request
         if (matrix[row][column] === "POLYANET") {
- 
-          // await axios
-          //   .delete("/polyanets", { data: {
-          //     row,
-          //     column,
-          //     candidateId,
-          //   }})
           await axios
             .post('/polyanets', {row, column, candidateId})
             .then(() => console.log('successful'))
@@ -32,3 +25,12 @@ const getData = async (url: string, candidateId: string) => {
 };
 
 getData(goalEndPoint, candidateId);
+
+
+// delete option 
+// await axios
+//   .delete("/polyanets", { data: {
+//     row,
+//     column,
+//     candidateId,
+//   }})
