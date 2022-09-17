@@ -13,18 +13,16 @@ const getData = async (url: string, candidateId: string) => {
     for (let row = 0; row < matrix.length; row++) {
       for (let column = 0; column < matrix[row].length; column++) {
         // if the value match , make a POST request
-        const value = matrix[row][column];
+        const value: string = matrix[row][column];
         
         switch (value) {
           case "POLYANET":
-            console.log("POLYANET");
             await axios
               .post("/polyanets", { row, column, candidateId })
               .then(() => console.log(value))
               .catch((err) => console.log(err));
             break;
           case "RIGHT_COMETH":
-            console.log("RIGHT_COMETH");
             await axios
               .post("/comeths", {
                 row,
@@ -36,7 +34,6 @@ const getData = async (url: string, candidateId: string) => {
               .catch((err) => console.log(err));
             break;
           case "LEFT_COMETH":
-            console.log("LEFT_COMETH");
             await axios
               .post("/comeths", { row, column, candidateId, direction: "left" })
               .then(() => console.log(value))
