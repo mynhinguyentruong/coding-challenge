@@ -6,7 +6,7 @@ axios.defaults.baseURL = "https://challenge.crossmint.io/api";
 const getData = async (url: string, candidateId: string) => {
   try {
     const response = await axios.get(url);
-    
+
     const matrix = response.data.goal;
 
     for (let row = 0; row < matrix.length; row++) {
@@ -40,6 +40,7 @@ const getData = async (url: string, candidateId: string) => {
               .then(() => console.log(value))
               .catch((err) => console.log(err));
             break;
+            
           case "UP_COMETH":
             await axios
               .post("/comeths", { row, column, candidateId, direction: "up" })
