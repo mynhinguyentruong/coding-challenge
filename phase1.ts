@@ -6,8 +6,9 @@ axios.defaults.baseURL = "https://challenge.crossmint.io/api";
 const getData = async (url: string, candidateId: string) => {
   try {
     const response = await axios.get(url);
-    console.log(response.data.goal);
+
     const matrix = response.data.goal;
+    
     for (let row = 0; row < matrix.length; row++) {
       for (let column = 0; column < matrix[row].length; column++) {
         // if the value match , make a POST request
