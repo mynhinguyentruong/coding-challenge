@@ -20,6 +20,7 @@ const getData = async (url: string, candidateId: string) => {
               .then(() => console.log(value))
               .catch((err) => console.log(err));
             break;
+
           case "RIGHT_COMETH":
             await axios
               .post("/comeths", {
@@ -31,6 +32,7 @@ const getData = async (url: string, candidateId: string) => {
               .then(() => console.log(value))
               .catch((err) => console.log(err));
             break;
+            
           case "LEFT_COMETH":
             await axios
               .post("/comeths", { row, column, candidateId, direction: "left" })
