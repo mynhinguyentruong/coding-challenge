@@ -5,7 +5,7 @@ axios.defaults.baseURL = "https://challenge.crossmint.io/api";
 const goalEndPoint = "map/54d4b7e9-642f-41aa-93fc-e705f35fa40e/goal";
 const candidateId = "54d4b7e9-642f-41aa-93fc-e705f35fa40e";
 
-const getData = async (url, candidateId) => {
+const getData = async (url: string, candidateId: string) => {
   try {
     const response = await axios.get(url);
     console.log(response.data.goal);

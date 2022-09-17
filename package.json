@@ -2,11 +2,11 @@
   "name": "coding-challenge",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "type": "module",
   "scripts": {
-    "phase1": "node index.js",
-    "phase2": "node main.js"
+    "phase1": "node index.ts",
+    "phase2": "node main.ts"
   },
   "repository": {
     "type": "git",
